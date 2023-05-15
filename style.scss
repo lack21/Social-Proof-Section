@@ -1,0 +1,229 @@
+// lear
+// Social Proof Section
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+// Colors
+$veryDarkMagenta: hsl(300, 43%, 22%);
+$softPink: hsl(333, 80%, 67%);
+$darkGrayishMagenta: hsl(303, 10%, 53%);
+$lightGrayishMagenta: hsl(300, 24%, 96%);
+$white: hsl(0, 0%, 100%);
+
+// Body
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/bg-pattern-top-desktop.svg);
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+  }
+}
+
+// Main Content
+.main {
+  padding: 7.5rem 0;
+  width: min(75rem, 90vw);
+
+  // Header
+  .header {
+    display: flex;
+    justify-content: space-between;
+
+    .left-content {
+      max-width: 400px;
+
+      .title {
+        font-size: 3.25rem;
+        line-height: 3rem;
+        color: $veryDarkMagenta;
+      }
+
+      .text {
+        font-size: 1.05rem;
+        padding-top: 1.5rem;
+        line-height: 1.6rem;
+        color: $darkGrayishMagenta;
+        font-weight: 500;
+      }
+    }
+
+    .right-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.25rem;
+
+      .item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2.25rem;
+        padding: 1.25rem 1.75rem;
+        background-color: $lightGrayishMagenta;
+        border-radius: 0.5rem;
+        -webkit-border-radius: 0.5rem;
+        -moz-border-radius: 0.5rem;
+        -ms-border-radius: 0.5rem;
+        -o-border-radius: 0.5rem;
+        width: 425px;
+
+        .stars {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          img {
+            display: block;
+          }
+        }
+
+        .text {
+          color: $veryDarkMagenta;
+          font-weight: 700;
+          letter-spacing: 0.25px;
+          white-space: nowrap;
+        }
+
+        &:nth-child(1) {
+          margin-left: -5rem;
+        }
+
+        &:nth-child(2) {
+          margin-left: -2.5rem;
+        }
+      }
+    }
+  }
+
+  // Footer
+  .footer {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+    margin-top: 3.75rem;
+
+    .item {
+      padding: 2.25rem;
+      background-color: $veryDarkMagenta;
+      border-radius: 0.5rem;
+      -webkit-border-radius: 0.5rem;
+      -moz-border-radius: 0.5rem;
+      -ms-border-radius: 0.5rem;
+      -o-border-radius: 0.5rem;
+
+      .top-section {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+
+        img {
+          display: block;
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          -ms-border-radius: 50%;
+          -o-border-radius: 50%;
+        }
+
+        .info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .name {
+            color: $white;
+            font-weight: 500;
+          }
+
+          .profession {
+            color: $softPink;
+            font-weight: 400;
+            font-size: 0.975rem;
+          }
+        }
+      }
+
+      .text {
+        margin-top: 1.25rem;
+        color: $white;
+        line-height: 1.6rem;
+        font-size: 1.05rem;
+      }
+
+      &:nth-child(2) {
+        margin-top: 2.5rem;
+      }
+
+      &:nth-child(3) {
+        margin-top: 5rem;
+      }
+    }
+  }
+}
+
+// For Smaller Devices
+@media screen and (max-width: 978px) {
+  .main {
+    padding: 3.25rem 0;
+
+    .header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2.75rem;
+
+      .left-content {
+        max-width: 550px;
+      }
+
+      .right-content .item {
+        margin: 0 !important;
+        max-width: 90vw;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+    }
+
+    .footer {
+      flex-direction: column;
+      max-width: 600px;
+      margin: 4.25rem auto 1.25rem;
+
+      .item {
+        margin: 0 !important;
+      }
+    }
+  }
+}
